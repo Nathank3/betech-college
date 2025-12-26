@@ -1,0 +1,69 @@
+<header
+    class="fixed w-full z-50 px-6 py-4 flex justify-between items-center glass border-b border-white/5"
+>
+    <div class="flex items-center gap-3">
+        <!-- Logo Placeholder -->
+        <div class="w-10 h-10 bg-neon-text rounded-lg flex items-center justify-center text-black font-black text-xl shadow-[0_0_15px_rgba(0,242,255,0.5)]">
+            B
+        </div>
+        <div class="text-2xl font-bold tracking-tighter neon-text serif">
+            BETECH
+        </div>
+    </div>
+
+    <!-- Desktop Nav -->
+    <nav
+        class="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-semibold items-center"
+    >
+        <a href="#" class="hover:text-neon-text transition">Home</a>
+        <a href="#courses" class="hover:text-neon-text transition">Courses</a>
+        <a href="#about" class="hover:text-neon-text transition">About</a>
+        <a
+            href="https://wa.me/+254711514558"
+            target="_blank"
+            class="px-6 py-2 border-2 border-neon-text text-neon-text hover:bg-neon-text hover:text-black transition duration-300 font-bold"
+        >Apply Now</a>
+    </nav>
+
+    <!-- Mobile Menu Toggle -->
+    <button id="mobile-menu-btn" class="md:hidden text-white hover:text-neon-text transition">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+    </button>
+</header>
+
+<!-- Mobile Navigation Overlay -->
+<div id="mobile-nav" class="fixed inset-0 z-[49] bg-black/95 backdrop-blur-xl translate-x-full transition-transform duration-500 flex flex-col items-center justify-center space-y-8 text-2xl font-bold serif">
+    <a href="#" class="hover:text-neon-text transition" onclick="toggleMobileMenu()">Home</a>
+    <a href="#courses" class="hover:text-neon-text transition" onclick="toggleMobileMenu()">Courses</a>
+    <a href="#about" class="hover:text-neon-text transition" onclick="toggleMobileMenu()">About Us</a>
+    <a
+        href="https://wa.me/+254711514558"
+        target="_blank"
+        class="px-10 py-4 border-2 border-neon-text text-neon-text font-bold text-lg"
+    >Apply Now</a>
+</div>
+
+<script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    function toggleMobileMenu() {
+        const isOpen = mobileNav.classList.contains('translate-x-0');
+        if (isOpen) {
+            mobileNav.classList.remove('translate-x-0');
+            mobileNav.classList.add('translate-x-full');
+            menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            document.body.style.overflow = 'auto';
+        } else {
+            mobileNav.classList.remove('translate-x-full');
+            mobileNav.classList.add('translate-x-0');
+            menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    menuBtn.addEventListener('click', toggleMobileMenu);
+</script>

@@ -1,0 +1,56 @@
+{
+    "Modern Tech": [
+        {
+            "title": "Introduction to AI",
+            "description": "Master the fundamentals of Artificial Intelligence and its real-world applications.",
+            "image": "/static/img/course_ai.jpg",
+            "tag": "Hot"
+        },
+        {
+            "title": "Intro to Web Development",
+            "description": "Build high-performance websites using HTML, CSS, and modern JavaScript.",
+            "image": "/static/img/course_web.jpg",
+            "tag": "In-Demand"
+        },
+        {
+            "title": "Graphic Design",
+            "description": "Create stunning visual identities using modern design tools.",
+            "image": "/static/img/course_design.jpg",
+            "tag": "Creative"
+        }
+    ],
+    "Office Pro": [
+        {
+            "title": "Computer Packages",
+            "description": "Foundational skills in operating systems and basic productivity software.",
+            "image": "/static/img/course_office.jpg",
+            "tag": "Essential"
+        },
+        {
+            "title": "Google Workspace",
+            "description": "Master cloud collaboration tools like Docs, Sheets, and Drive.",
+            "image": "/static/img/course_google.jpg",
+            "tag": "Efficiency"
+        },
+        {
+            "title": "QuickBooks",
+            "description": "Professional accounting and financial management for businesses.",
+            "image": "/static/img/course_accounting.jpg",
+            "tag": "Professional"
+        }
+    ],
+    "Technical Support": [
+        {
+            "title": "Computer Maintenance",
+            "description": "Learn to diagnose, repair, and maintain computer hardware and software.",
+            "image": "/static/img/course_maintenance.jpg",
+            "tag": "Practical"
+        },
+        {
+            "title": "Networking",
+            "description": "Understand network infrastructure, security, and connectivity.",
+            "image": "/static/img/course_networking.jpg",
+            "tag": "Infrastructure"
+        }
+    ]
+}

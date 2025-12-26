@@ -1,0 +1,80 @@
+<div id="course-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-black/90 backdrop-blur-sm" onclick="closeCourseModal()"></div>
+    
+    <!-- Modal Content -->
+    <div class="glass relative max-w-2xl w-full bg-black/80 border border-neon-text/30 p-8 md:p-12 overflow-y-auto max-h-[90vh]">
+        <button onclick="closeCourseModal()" class="absolute top-6 right-6 text-gray-400 hover:text-neon-text transition-colors">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+
+        <div id="modal-content">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="px-3 py-1 bg-neon-text/10 text-neon-text text-[10px] font-black uppercase tracking-widest border border-neon-text/30 rounded-full">
+                    <span id="modal-tag">Loading...</span>
+                </div>
+            </div>
+            
+            <h3 id="modal-title" class="text-3xl md:text-4xl serif font-bold mb-6 neon-text">Course Title</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">About this Course</h4>
+                    <p id="modal-description" class="text-gray-400 leading-relaxed">
+                        This is a placeholder description for the selected course. It provides an overview of what students will learn and the career opportunities available.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">What You'll Learn</h4>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li class="flex items-center gap-2"><span class="text-neon-text">✓</span> Foundation principles & setup</li>
+                        <li class="flex items-center gap-2"><span class="text-neon-text">✓</span> Advanced tools and workflows</li>
+                        <li class="flex items-center gap-2"><span class="text-neon-text">✓</span> Real-world project implementation</li>
+                        <li class="flex items-center gap-2"><span class="text-neon-text">✓</span> Industry best practices</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-4 mb-10 border-t border-white/5 pt-8">
+                <div>
+                    <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Duration</p>
+                    <p class="text-white font-bold">3 Months</p>
+                </div>
+                <div>
+                    <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Level</p>
+                    <p class="text-white font-bold">Beginner to Pro</p>
+                </div>
+                <div>
+                    <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Sessions</p>
+                    <p class="text-white font-bold">Flexible</p>
+                </div>
+            </div>
+
+            <a href="https://wa.me/+254711514558" target="_blank" class="w-full inline-block text-center py-4 bg-neon-text text-black font-black uppercase tracking-widest hover:bg-white transition-colors duration-300">
+                Enroll Now via WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openCourseModal(title, description, tag) {
+        document.getElementById('modal-title').innerText = title;
+        document.getElementById('modal-description').innerText = description;
+        document.getElementById('modal-tag').innerText = tag;
+        
+        const modal = document.getElementById('course-modal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeCourseModal() {
+        const modal = document.getElementById('course-modal');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+    }
+</script>
