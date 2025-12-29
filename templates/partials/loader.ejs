@@ -1,0 +1,97 @@
+<div id="loader-wrapper" class="fixed inset-0 z-[200] bg-[#050505] flex items-center justify-center transition-opacity duration-700">
+    <div class="loader-container flex flex-col items-center gap-6">
+        <div class="loader relative">
+            <svg width="64" height="64" viewBox="0 0 100 100">
+                <defs>
+                    <filter id="glow">
+                        <feGaussianBlur stdDeviation="4" result="blur"/>
+                        <feMerge>
+                            <feMergeNode in="blur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                    <radialGradient id="cloudGrad">
+                        <stop offset="0%" stop-color="#00f2ff" stop-opacity="0.25"/>
+                        <stop offset="100%" stop-color="#00f2ff" stop-opacity="0"/>
+                    </radialGradient>
+                </defs>
+
+                <circle class="cloud" cx="50" cy="50" r="32" fill="url(#cloudGrad)" />
+
+                <g class="hourglass" filter="url(#glow)" transform="rotate(-8 50 50)">
+                    <path d="M35 20 H65 V30 L55 50 L65 70 V80 H35 V70 L45 50 L35 30 Z" fill="none" stroke="#00f2ff" stroke-width="2.2" stroke-linejoin="round"/>
+                    <polygon class="sand-top" points="38,30 62,30 50,48" fill="#00f2ff"/>
+                    <polygon class="sand-bottom" points="45,52 55,52 62,70 38,70" fill="#00f2ff"/>
+                </g>
+            </svg>
+        </div>
+        <div class="text-neon-text font-bold tracking-[0.3em] uppercase text-xs animate-pulse serif">Initializing...</div>
+    </div>
+</div>
+
+<style>
+.loader {
+    width: 64px;
+    height: 64px;
+}
+
+.hourglass {
+    transform-origin: 50% 50%;
+    animation: flip 3.6s infinite cubic-bezier(.4,0,.2,1);
+}
+
+.sand-top {
+    transform-origin: top;
+    animation: topSand 3.6s infinite ease-in;
+}
+
+.sand-bottom {
+    transform-origin: bottom;
+    animation: bottomSand 3.6s infinite ease-out;
+}
+
+.cloud {
+    animation: cloudPulse 3.6s infinite ease-in-out;
+}
+
+@keyframes topSand {
+    0%   { transform: scaleY(1); }
+    40%  { transform: scaleY(0); }
+    100% { transform: scaleY(0); }
+}
+
+@keyframes bottomSand {
+    0%   { transform: scaleY(0); }
+    40%  { transform: scaleY(1); }
+    100% { transform: scaleY(1); }
+}
+
+@keyframes flip {
+    0%,45% { transform: rotate(-8deg); }
+    55%,100% { transform: rotate(172deg); }
+}
+
+@keyframes cloudPulse {
+    0%   { transform: scale(0.95); opacity: 0.15; }
+    50%  { transform: scale(1.05); opacity: 0.25; }
+    100% { transform: scale(0.95); opacity: 0.15; }
+}
+
+body.loading {
+    overflow: hidden;
+}
+</style>
+
+<script>
+    window.addEventListener('load', () => {
+        const loader = document.getElementById('loader-wrapper');
+        setTimeout(() => {
+            loader.style.opacity = '0';
+            document.body.classList.remove('loading');
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 700);
+        }, 1200); // Small delay to show the beautiful animation
+    });
+    document.body.classList.add('loading');
+</script>

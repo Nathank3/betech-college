@@ -28,11 +28,8 @@
                 </div>
                 <div>
                     <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">What You'll Learn</h4>
-                    <ul class="space-y-2 text-sm text-gray-500">
-                        <li class="flex items-center gap-2"><span class="text-neon-text">✓</span> Foundation principles & setup</li>
-                        <li class="flex items-center gap-2"><span class="text-neon-text">✓</span> Advanced tools and workflows</li>
-                        <li class="flex items-center gap-2"><span class="text-neon-text">✓</span> Real-world project implementation</li>
-                        <li class="flex items-center gap-2"><span class="text-neon-text">✓</span> Industry best practices</li>
+                    <ul id="modal-learn-list" class="space-y-2 text-sm text-gray-500">
+                        <!-- Dynamic items -->
                     </ul>
                 </div>
             </div>
@@ -40,30 +37,63 @@
             <div class="grid grid-cols-3 gap-4 mb-10 border-t border-white/5 pt-8">
                 <div>
                     <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Duration</p>
-                    <p class="text-white font-bold">3 Months</p>
+                    <p id="modal-duration" class="text-white font-bold">Loading...</p>
                 </div>
                 <div>
                     <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Level</p>
-                    <p class="text-white font-bold">Beginner to Pro</p>
+                    <p id="modal-level" class="text-white font-bold">Loading...</p>
                 </div>
                 <div>
                     <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Sessions</p>
-                    <p class="text-white font-bold">Flexible</p>
+                    <p id="modal-sessions" class="text-white font-bold">Flexible</p>
                 </div>
             </div>
 
             <a href="https://wa.me/+254711514558" target="_blank" class="w-full inline-block text-center py-4 bg-neon-text text-black font-black uppercase tracking-widest hover:bg-white transition-colors duration-300">
-                Enroll Now via WhatsApp
+                Enroll Now 
             </a>
         </div>
     </div>
 </div>
 
 <script>
-    function openCourseModal(title, description, tag) {
+    function openCourseDetails(title) {
+        if (!window.COURSE_REGISTRY) return;
+        
+        const course = window.COURSE_REGISTRY.find(c => c.title === title);
+        if (course) {
+            const learnStr = (course.learn || []).join('|');
+            openCourseModal(
+                course.title, 
+                course.description, 
+                course.tag, 
+                course.duration, 
+                course.level, 
+                course.sessions, 
+                learnStr
+            );
+        }
+    }
+
+    function openCourseModal(title, description, tag, duration, level, sessions, learnStr) {
         document.getElementById('modal-title').innerText = title;
         document.getElementById('modal-description').innerText = description;
         document.getElementById('modal-tag').innerText = tag;
+        document.getElementById('modal-duration').innerText = duration || 'Contact Us';
+        document.getElementById('modal-level').innerText = level || 'Beginner';
+        document.getElementById('modal-sessions').innerText = sessions || 'Flexible';
+        
+        const learnList = document.getElementById('modal-learn-list');
+        learnList.innerHTML = '';
+        if (learnStr) {
+            const items = learnStr.split('|');
+            items.forEach(item => {
+                const li = document.createElement('li');
+                li.className = 'flex items-center gap-2';
+                li.innerHTML = `<span class="text-neon-text">✓</span> ${item}`;
+                learnList.appendChild(li);
+            });
+        }
         
         const modal = document.getElementById('course-modal');
         modal.classList.remove('hidden');

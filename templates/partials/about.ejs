@@ -1,7 +1,7 @@
 <section id="about" class="py-24 px-6 border-t border-white/5 bg-white/[0.01]">
     <div class="max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch mb-24">
-            <div class="flex flex-col justify-between">
+            <div class="flex flex-col justify-between reveal reveal-left">
                 <div>
                     <h2 class="text-4xl md:text-5xl serif font-bold mb-8">Empowering Minds <br/><span class="neon-text">Shaping Futures</span></h2>
                     <p class="text-gray-400 text-lg leading-relaxed mb-12">
@@ -12,18 +12,18 @@
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="glass p-6 h-full">
+                    <div class="glass p-6 h-full reveal reveal-up delay-100">
                         <h4 class="text-neon-text font-bold mb-3 uppercase tracking-tighter">Our Vision</h4>
                         <p class="text-sm text-gray-500">To be the leading hub for technological innovation and excellence in the region.</p>
                     </div>
-                    <div class="glass p-6 h-full">
+                    <div class="glass p-6 h-full reveal reveal-up delay-200">
                         <h4 class="text-neon-text font-bold mb-3 uppercase tracking-tighter">Our Mission</h4>
                         <p class="text-sm text-gray-500">To equip students with practical, future-ready skills that drive career success.</p>
                     </div>
                 </div>
             </div>
             
-            <div class="relative group h-full">
+            <div class="relative group h-full reveal reveal-right">
                 <div class="absolute -inset-1 bg-neon-text opacity-20 blur-xl group-hover:opacity-40 transition duration-1000"></div>
                 <div class="glass p-8 md:p-12 relative h-full flex flex-col justify-center border-neon-text/30">
                     <h3 class="text-3xl serif font-bold mb-6">Director's Note</h3>
@@ -32,9 +32,11 @@
                         ensures every student walks out with not just a certificate, but a future."
                     </p>
                     <div class="flex items-center gap-4 mt-auto">
-                        <div class="w-14 h-14 bg-white/10 rounded-full border border-neon-text/30"></div>
+                        <div class="w-14 h-14 bg-white/10 rounded-full border border-neon-text/30 overflow-hidden">
+                            <img src="/static/img/director.png" alt="Daniel Nathan" class="w-full h-full object-cover" loading="lazy">
+                        </div>
                         <div>
-                            <p class="font-bold text-lg">Director Name</p>
+                            <p class="font-bold text-lg">Daniel Nathan</p>
                             <p class="text-xs text-neon-text uppercase tracking-widest font-bold">Founder & CEO</p>
                         </div>
                     </div>
@@ -43,7 +45,7 @@
         </div>
 
         <!-- Location & Map -->
-        <div class="mt-16">
+        <div class="mt-16 reveal reveal-up">
             <h3 class="text-3xl serif font-bold mb-8 text-center">Visit Our <span class="neon-text">Wote Campus</span></h3>
             <div class="glass h-[350px] md:h-[500px] w-full overflow-hidden relative border-neon-text/20">
                 <iframe 

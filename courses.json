@@ -3,54 +3,108 @@
         {
             "title": "Introduction to AI",
             "description": "Master the fundamentals of Artificial Intelligence and its real-world applications.",
-            "image": "/static/img/course_ai.jpg",
-            "tag": "Hot"
+            "image": "/static/img/courses/ai.jpg",
+            "tag": "Hot",
+            "duration": "Fortnight",
+            "level": "Beginner",
+            "sessions": "Flexible",
+            "learn": ["Foundations of AI", "Generative AI Tools", "Prompts & Optimization", "AI Ethics"]
         },
         {
             "title": "Intro to Web Development",
             "description": "Build high-performance websites using HTML, CSS, and modern JavaScript.",
-            "image": "/static/img/course_web.jpg",
-            "tag": "In-Demand"
+            "image": "/static/img/courses/web development.jpg",
+            "tag": "In-Demand",
+            "duration": "3 Months",
+            "level": "Beginner",
+            "sessions": "Flexible",
+            "learn": ["HTML5 & Semantics", "CSS3 & Modern Layouts", "JavaScript Basics", "Responsive Design"]
         },
         {
-            "title": "Graphic Design",
-            "description": "Create stunning visual identities using modern design tools.",
-            "image": "/static/img/course_design.jpg",
-            "tag": "Creative"
+            "title": "Graphic Design Essentials",
+            "description": "Create stunning visual identities focusing on industry favorite softwares.",
+            "image": "/static/img/courses/graphic design.jpg",
+            "tag": "Creative",
+            "duration": "3 Months",
+            "level": "Beginner",
+            "sessions": "Flexible",
+            "learn": ["Adobe Illustrator", "Photoshop Techniques", "Typography & Color Theory", "Brand Identity Design"]
+        },
+        {
+            "title": "Mobile Graphics",
+            "description": "Master graphic design on your phone focusing on Pixellab and other modern tools.",
+            "image": "/static/img/courses/mobile graphics.jpg",
+            "tag": "Trending",
+            "duration": "1 Month",
+            "level": "Beginner",
+            "sessions": "Flexible",
+            "learn": ["Pixellab Software Mastery", "Mobile Design Principles", "Social Media Graphics", "Branding on Mobile"]
+        }
+    ],
+    "Creative & Media": [
+        {
+            "title": "Photography and Videography",
+            "description": "Capture breathtaking moments and create cinematic stories through modern equipment.",
+            "image": "/static/img/courses/photography videography.jpg",
+            "tag": "Skills",
+            "duration": "3 Months",
+            "level": "Beginner",
+            "sessions": "Flexible",
+            "learn": ["Camera Handling", "Lighting Techniques", "Standard Editing", "Cinematography Basics"]
         }
     ],
     "Office Pro": [
         {
             "title": "Computer Packages",
             "description": "Foundational skills in operating systems and basic productivity software.",
-            "image": "/static/img/course_office.jpg",
-            "tag": "Essential"
+            "image": "/static/img/courses/office suite.png",
+            "tag": "Essential",
+            "duration": "2 Months",
+            "level": "Beginner",
+            "sessions": "Flexible",
+            "learn": ["Computer Operations", "Microsoft Office Suite", "Typesetting", "Internet Surfing (365)"]
         },
         {
             "title": "Google Workspace",
-            "description": "Master cloud collaboration tools like Docs, Sheets, and Drive.",
-            "image": "/static/img/course_google.jpg",
-            "tag": "Efficiency"
+            "description": "Master cloud collaboration tools for professional efficiency.",
+            "image": "/static/img/courses/google workspace.jpg",
+            "tag": "Efficiency",
+            "duration": "1 Month",
+            "level": "Beginner",
+            "sessions": "Flexible",
+            "learn": ["Calendar Management", "Online Meetings Setup", "Google Suite Mastery", "Online Storage Management"]
         },
         {
             "title": "QuickBooks",
             "description": "Professional accounting and financial management for businesses.",
-            "image": "/static/img/course_accounting.jpg",
-            "tag": "Professional"
+            "image": "/static/img/courses/quickbooks.png",
+            "tag": "Professional",
+            "duration": "2 Months",
+            "level": "Intermediate",
+            "sessions": "Flexible",
+            "learn": ["Company Setup", "Inventory Management", "Financial Reporting", "Tax Preparation"]
         }
     ],
     "Technical Support": [
         {
             "title": "Computer Maintenance",
             "description": "Learn to diagnose, repair, and maintain computer hardware and software.",
-            "image": "/static/img/course_maintenance.jpg",
-            "tag": "Practical"
+            "image": "/static/img/courses/maintenance.jpg",
+            "tag": "Practical",
+            "duration": "3 Months",
+            "level": "Beginner",
+            "sessions": "Flexible",
+            "learn": ["Hardware Assembly", "Software Troubleshooting", "Disk Management", "Preventive Maintenance"]
         },
         {
-            "title": "Networking",
+            "title": "Networking Fundamentals",
             "description": "Understand network infrastructure, security, and connectivity.",
-            "image": "/static/img/course_networking.jpg",
-            "tag": "Infrastructure"
+            "image": "/static/img/courses/networking fundamentals.jpg",
+            "tag": "Infrastructure",
+            "duration": "3 Months",
+            "level": "General",
+            "sessions": "Flexible",
+            "learn": ["IP Addressing", "Router Configuration", "Network Security", "Cable Terminations"]
         }
     ]
 }

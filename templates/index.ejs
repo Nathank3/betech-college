@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="dark scroll-smooth" id="top">
     <head>
         <%- include('partials/head') %>
     </head>
     <body class="overflow-x-hidden bg-[#050505] text-[#e5e7eb] antialiased">
+        <%- include('partials/loader') %>
         
         <%- include('partials/navbar') %>
 
@@ -18,9 +19,14 @@
         <!-- Chatbot Button -->
         <%- include('partials/chatbot') %>
 
+        <!-- Prospectus Overlay -->
+        <%- include('partials/prospectus_overlay') %>
+
         <!-- Course Details Modal -->
         <%- include('partials/course_details_modal') %>
 
         <script src="/static/js/chatbot.js"></script>
+        <script src="/static/js/prospectus.js"></script>
+        <script src="/static/js/animations.js"></script>
     </body>
 </html>

@@ -1,6 +1,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Betech Computer College | Future-Proof Your Career</title>
+
+<!-- Critical Resource Preloading -->
+<link rel="preload" href="/static/img/hero-bg.png" as="image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>Betech Computer College | Future-Proof Your Career in Wote, Makueni</title>
+<meta name="description" content="Betech Computer College Wote - Empowering minds with cutting-edge tech education. Join us for Web Development, AI, Graphic Design, and more in Makueni County.">
+<meta name="keywords" content="Betech Computer College, Wote, Makueni, Computer School, Tech Education Kenya, Web Development Course, AI Course, Graphic Design, Computer Packages">
+<meta name="author" content="Betech Computer College">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/static/img/betech-logo.png">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://betech.ac.ke/">
+<meta property="og:title" content="Betech Computer College | Future-Proof Your Career">
+<meta property="og:description" content="Join the leading technical hub in Makueni. Practical skills for the modern world.">
+<meta property="og:image" content="/static/img/hero-bg.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:title" content="Betech Computer College | Future-Proof Your Career">
+<meta property="twitter:description" content="Join the leading technical hub in Makueni. Practical skills for the modern world.">
+<meta property="twitter:image" content="/static/img/hero-bg.png">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
     tailwind.config = {
@@ -18,3 +42,22 @@
     rel="stylesheet"
 >
 <link rel="stylesheet" href="/static/css/styles.css">
+
+<!-- Hidden data registry to safely pass EJS data to client-side JS without causing IDE lint errors -->
+<div id="course-data-registry" style="display:none" data-courses='<%- JSON.stringify(categories || {}) %>'></div>
+
+<script>
+    (function() {
+        try {
+            const registryEl = document.getElementById('course-data-registry');
+            if (registryEl && registryEl.dataset.courses) {
+                window.BETECH_COURSES = JSON.parse(registryEl.dataset.courses);
+                window.COURSE_REGISTRY = Object.values(window.BETECH_COURSES).flat();
+            }
+        } catch (e) {
+            console.error("Error parsing course data:", e);
+            window.BETECH_COURSES = {};
+            window.COURSE_REGISTRY = [];
+        }
+    })();
+</script>
