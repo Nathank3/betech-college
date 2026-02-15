@@ -1,0 +1,5 @@
+{
+  "watch": ["server.js", "courses.json"],
+  "ext": "js,json",
+  "ignore": ["templates/*", "static/*"]
+}

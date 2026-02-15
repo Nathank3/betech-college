@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" id="top">
+    <head>
+        <%- include('partials/head') %>
+        <title>About Us - Betech Computer College</title>
+    </head>
+    <body class="overflow-x-hidden antialiased bg-white">
+        
+        <%- include('partials/navbar') %>
+
+        <!-- Hero Section -->
+        <section class="pt-32 pb-20 bg-white text-slate-900 overflow-hidden relative border-b border-slate-100">
+            <div class="absolute inset-0 opacity-20">
+                <img src="/static/img/hero-bg.png" alt="" class="w-full h-full object-cover">
+            </div>
+            <div class="max-w-6xl mx-auto px-8 md:px-12 relative z-10 text-center">
+                <span class="inline-block px-4 py-2 bg-purple-50 text-purple-700 text-xs font-semibold uppercase tracking-wider rounded-full border border-purple-100 mb-6">
+                    Who We Are
+                </span>
+                <h1 class="text-4xl md:text-7xl serif font-bold mb-8 leading-tight text-slate-900">
+                    Dedicated to <span class="accent-text">Digital</span> Excellence
+                </h1>
+                <p class="text-lg md:text-xl text-slate-500 max-w-3xl mx-auto leading-relaxed">
+                    Betech Computer College is more than just a school. We are a community of innovators, builders, and leaders committed to transforming the tech landscape of Makueni.
+                </p>
+            </div>
+        </section>
+
+        <!-- Vision & Mission Expanded -->
+        <section class="py-24 bg-white">
+            <div class="max-w-6xl mx-auto px-8 md:px-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <!-- Vision -->
+                    <div class="reveal reveal-left bg-slate-50 p-12 rounded-[3rem] border border-slate-100 flex flex-col items-center text-center">
+                        <div class="w-20 h-20 bg-white rounded-3xl shadow-sm border border-slate-200 flex items-center justify-center mb-8">
+                            <svg class="w-10 h-10 text-purple-600" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" stroke="currentColor"/>
+                            </svg>
+                        </div>
+                        <h2 class="text-3xl serif font-bold mb-6 text-slate-900">Our Vision</h2>
+                        <p class="text-slate-600 text-lg leading-relaxed">
+                            To be the leading hub for technological innovation and excellence in the region, fostering an environment where ideas turn into solutions.
+                        </p>
+                    </div>
+
+                    <!-- Mission -->
+                    <div class="reveal reveal-right delay-200 bg-purple-600 p-12 rounded-[3rem] text-white flex flex-col items-center text-center shadow-xl shadow-purple-200">
+                        <div class="w-20 h-20 bg-white/10 backdrop-blur-md rounded-3xl border border-white/20 flex items-center justify-center mb-8">
+                            <svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor"/>
+                            </svg>
+                        </div>
+                        <h2 class="text-3xl serif font-bold mb-6">Our Mission</h2>
+                        <p class="text-purple-50 text-lg leading-relaxed">
+                            To equip students with practical, future-ready skills that drive career success and empower them to compete in the global marketplace.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Story / Philosophy -->
+        <section class="py-24 bg-slate-50 overflow-hidden">
+            <div class="max-w-6xl mx-auto px-8 md:px-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                    <div class="reveal reveal-left">
+                        <h2 class="text-4xl md:text-5xl serif font-bold mb-8 text-slate-900 leading-tight">
+                            The Heartbeat of <span class="accent-text">Progress</span>
+                        </h2>
+                        <div class="space-y-6 text-slate-600 text-lg leading-relaxed">
+                            <p>
+                                Founded with a clear objective, Betech Computer College was established to bridge the digital gap in Makueni County. We recognized that the future of the world is digital, and our community needed a center that could offer high-quality, relevant, and affordable tech education.
+                            </p>
+                            <p>
+                                Today, we are proud to have trained hundreds of students who are now working in various sectors, from web development to graphic design and office administration.
+                            </p>
+                        </div>
+                        <div class="flex gap-10 mt-12">
+                            <div>
+                                <div class="text-3xl font-bold text-slate-900">500+</div>
+                                <div class="text-sm text-slate-500 font-medium">Graduates</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-bold text-slate-900">15+</div>
+                                <div class="text-sm text-slate-500 font-medium">Tech Units</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-bold text-slate-900">100%</div>
+                                <div class="text-sm text-slate-500 font-medium">Practical</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative reveal reveal-right delay-300">
+                        <div class="absolute -inset-4 bg-purple-200 rounded-[3rem] rotate-3 opacity-50"></div>
+                        <img 
+                            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1742&auto=format&fit=crop" 
+                            alt="Betech Community" 
+                            class="relative rounded-[2.5rem] shadow-2xl w-full h-auto object-cover aspect-video"
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Director Quote Large -->
+        <section class="py-24 bg-white">
+            <div class="max-w-4xl mx-auto px-8 text-center italic reveal reveal-up">
+                <svg class="w-12 h-12 text-purple-200 mx-auto mb-8" fill="currentColor" viewBox="0 0 32 32">
+                    <path d="M10 8c-4.418 0-8 3.582-8 8s3.582 8 8 8c.535 0 1.05-.053 1.547-.154C11.161 25.074 13.332 26 16 26c1.333 0 2.444-.333 3.333-1 1.047-.785 1.667-2.103 1.667-3.5 0-1.012-.325-1.94-.881-2.693C20.686 18.271 21 17.172 21 16c0-4.418-3.582-8-8-8zM26 8c-4.418 0-8 3.582-8 8s3.582 8 8 8c.535 0 1.05-.053 1.547-.154C27.161 25.074 29.332 26 32 26c1.333 0 2.444-.333 3.333-1 1.047-.785 1.667-2.103 1.667-3.5 0-1.012-.325-1.94-.881-2.693C36.686 18.271 37 17.172 37 16c0-4.418-3.582-8-8-8z"></path>
+                </svg>
+                <p class="text-3xl md:text-4xl serif font-medium text-slate-800 leading-snug mb-10">
+                    "At Betech, we believe that education is the heartbeat of progress. Our commitment to excellence ensures every student walks out with not just a certificate, but a future."
+                </p>
+                <div class="flex flex-col items-center">
+                    <img src="/static/img/director.png" alt="Director" class="w-20 h-20 rounded-full border-2 border-purple-100 mb-4 object-cover">
+                    <h4 class="text-xl font-bold text-slate-900">Daniel Nathan</h4>
+                    <p class="text-purple-600 font-semibold uppercase tracking-widest text-xs">Founder & CEO</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-24 bg-slate-50">
+            <div class="max-w-4xl mx-auto px-8 text-center reveal reveal-up">
+                <h2 class="text-3xl md:text-5xl serif font-bold mb-8 text-slate-900 leading-tight">
+                    Ready to Start Your <span class="accent-text">Future</span>?
+                </h2>
+                <p class="text-lg text-slate-600 mb-10 leading-relaxed">
+                    Join our growing community of tech professionals and start learning the skills that matter.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/courses" class="px-10 py-5 bg-[#7C3AED] text-white font-bold rounded-full shadow-xl shadow-purple-200 hover:bg-[#6D28D9] transform hover:-translate-y-1 transition-all">
+                        Explore Courses
+                    </a>
+                    <a href="/contact" class="px-10 py-5 bg-white border border-slate-200 text-slate-900 font-bold rounded-full hover:bg-slate-50 transition-all">
+                        Talk to Admissions
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <%- include('partials/footer') %>
+
+        <!-- Smartsupp Chatbot -->
+        <%- include('partials/chatbot') %>
+
+        <script src="/static/js/animations.js"></script>
+    </body>
+</html>

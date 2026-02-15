@@ -21,14 +21,14 @@
             "learn": ["HTML5 & Semantics", "CSS3 & Modern Layouts", "JavaScript Basics", "Responsive Design"]
         },
         {
-            "title": "Graphic Design Essentials",
-            "description": "Create stunning visual identities focusing on industry favorite softwares.",
-            "image": "/static/img/courses/graphic design.jpg",
-            "tag": "Creative",
+            "title": "Programming and Coding",
+            "description": "Develop powerful web-based applications for both online and offline use. Master PHP logic, database integration, and application packaging.",
+            "image": "/static/img/courses/programing.png",
+            "tag": "Coding",
             "duration": "3 Months",
-            "level": "Beginner",
+            "level": "Intermediate",
             "sessions": "Flexible",
-            "learn": ["Adobe Illustrator", "Photoshop Techniques", "Typography & Color Theory", "Brand Identity Design"]
+            "learn": ["PHP Language Foundations", "Web App Architecture", "Offline Application Packaging", "Database Administration"]
         },
         {
             "title": "Mobile Graphics",
@@ -51,6 +51,16 @@
             "level": "Beginner",
             "sessions": "Flexible",
             "learn": ["Camera Handling", "Lighting Techniques", "Standard Editing", "Cinematography Basics"]
+        },
+        {
+            "title": "Graphic Design Essentials",
+            "description": "Create stunning visual identities focusing on industry favorite softwares.",
+            "image": "/static/img/courses/graphic design.jpg",
+            "tag": "Creative",
+            "duration": "3 Months",
+            "level": "Beginner",
+            "sessions": "Flexible",
+            "learn": ["Adobe Illustrator", "Photoshop Techniques", "Typography & Color Theory", "Brand Identity Design"]
         }
     ],
     "Office Pro": [

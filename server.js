@@ -25,6 +25,15 @@ const cacheOptions = {
 };
 app.use('/static', express.static(path.join(__dirname, 'static'), cacheOptions));
 
+// SEO Routes
+app.get('/sitemap.xml', (req, res) => {
+    res.sendFile(path.join(__dirname, 'sitemap.xml'));
+});
+
+app.get('/robots.txt', (req, res) => {
+    res.sendFile(path.join(__dirname, 'robots.txt'));
+});
+
 app.get('/', (req, res) => {
     try {
         const coursesData = JSON.parse(fs.readFileSync(path.join(__dirname, 'courses.json'), 'utf8'));
@@ -32,6 +41,36 @@ app.get('/', (req, res) => {
     } catch (error) {
         console.error("Error loading courses data:", error);
         res.render('index', { categories: {} });
+    }
+});
+
+app.get('/contact', (req, res) => {
+    try {
+        const coursesData = JSON.parse(fs.readFileSync(path.join(__dirname, 'courses.json'), 'utf8'));
+        res.render('contact', { categories: coursesData });
+    } catch (error) {
+        console.error("Error loading courses data for contact page:", error);
+        res.render('contact', { categories: {} });
+    }
+});
+
+app.get('/courses', (req, res) => {
+    try {
+        const coursesData = JSON.parse(fs.readFileSync(path.join(__dirname, 'courses.json'), 'utf8'));
+        res.render('courses_page', { categories: coursesData });
+    } catch (error) {
+        console.error("Error loading courses data for courses page:", error);
+        res.render('courses_page', { categories: {} });
+    }
+});
+
+app.get('/about', (req, res) => {
+    try {
+        const coursesData = JSON.parse(fs.readFileSync(path.join(__dirname, 'courses.json'), 'utf8'));
+        res.render('about_page', { categories: coursesData });
+    } catch (error) {
+        console.error("Error loading courses data for about page:", error);
+        res.render('about_page', { categories: {} });
     }
 });
 

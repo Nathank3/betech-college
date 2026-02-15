@@ -1,107 +1,12 @@
-<div class="fixed bottom-8 right-8 z-50">
-    <button
-        id="chatbot-toggle"
-        class="p-4 bg-neon-text text-black rounded-full shadow-[0_0_20px_rgba(0,242,255,0.6)] hover:scale-110 transition-all transform duration-300 group animate-pulse hover:animate-none"
-    >
-        <svg
-            class="w-8 h-8 group-hover:rotate-12 transition-transform"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-        >
-            <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
-            >
-            </path>
-        </svg>
-    </button>
-
-    <!-- Chat Window -->
-    <div
-        id="chatbot-window"
-        class="hidden absolute bottom-20 right-0 w-80 h-[500px] max-h-[80vh] glass rounded-2xl shadow-2xl overflow-hidden flex flex-col border border-neon-text/50 backdrop-blur-2xl"
-    >
-        <div
-            class="bg-neon-text p-5 text-black font-bold flex justify-between items-center shadow-lg shrink-0"
-        >
-            <div class="flex items-center gap-2">
-                <div class="w-2 h-2 bg-black rounded-full animate-ping"></div>
-                <span>Betech Assistant</span>
-            </div>
-            <button
-                id="chatbot-close"
-                class="text-black hover:scale-125 transition-transform"
-            >
-                ✕
-            </button>
-        </div>
-        
-        <!-- Chat Messages - Now flex-grow to fill space -->
-        <div
-            id="chat-messages"
-            class="flex-1 p-5 overflow-y-auto space-y-4 text-sm scrollbar-hide bg-black/40"
-        >
-            <div
-                class="bg-white/10 p-4 rounded-2xl rounded-tr-none border border-white/10 max-w-[85%]"
-            >
-                Welcome to Betech! 👋 How can I help you today?
-            </div>
-        </div>
-
-        <!-- Scrollable Questions Section -->
-        <div class="p-4 border-t border-white/5 flex flex-col gap-3 bg-black/60 max-h-44 overflow-y-auto scrollbar-hide">
-            <button
-                onclick="botReply('Where are you located?', 'Wote, Makueni along Cooperative Bank - Maisha Kamili Road , Posta Building.')"
-                class="w-full text-left p-3 rounded-xl hover:bg-neon-text hover:text-black transition-all border border-neon-text/20 text-xs font-semibold"
-            >
-                📍 Where are you located?
-            </button>
-            <button
-                onclick="botReply('Courses Offered?', 'We offer AI, Graphic Design, Web Dev, and Office Packages. Check our Courses section!')"
-                class="w-full text-left p-3 rounded-xl hover:bg-neon-text hover:text-black transition-all border border-neon-text/20 text-xs font-semibold"
-            >
-                🎓 Course offered
-            </button>
-            <button
-                onclick="botReply('Fees structure', 'Contact us')"
-                class="w-full text-left p-3 rounded-xl hover:bg-neon-text hover:text-black transition-all border border-neon-text/20 text-xs font-semibold"
-            >
-                💰 Fees structure
-            </button>
-            <button
-                onclick="botReply('Do you offer past time tution?', 'Yes we offer past time tution .')"
-                class="w-full text-left p-3 rounded-xl hover:bg-neon-text hover:text-black transition-all border border-neon-text/20 text-xs font-semibold"
-            >
-                ⏰ Do you offer past time tution?
-            </button>
-            <button
-                onclick="botReply('Do you issue certificates?', 'Yes, certificates are offered after finishing your coursework successfully.')"
-                class="w-full text-left p-3 rounded-xl hover:bg-neon-text hover:text-black transition-all border border-neon-text/20 text-xs font-semibold"
-            >
-                📜 Do you issue certificates?
-            </button>
-            <button
-                onclick="botReply('Can you pay fees in instalments?', 'Yes, you can pay a fixed down payment and finish balance in instalments.')"
-                class="w-full text-left p-3 rounded-xl hover:bg-neon-text hover:text-black transition-all border border-neon-text/20 text-xs font-semibold"
-            >
-                💳 Can you pay fees in instalments?
-            </button>
-        </div>
-
-        <!-- Fixed Contact Link at Bottom -->
-        <div class="p-4 border-t border-white/5 bg-black/80 text-center shrink-0">
-            <p class="text-[10px] text-gray-500 mb-1">Can't find what you're looking for?</p>
-            <a 
-                href="https://wa.me/+254711514558" 
-                target="_blank"
-                class="text-neon-text text-xs font-bold hover:underline flex items-center justify-center gap-1"
-            >
-                Contact us 
-                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.224-3.52c1.54.914 3.482 1.488 5.613 1.489 5.454 0 9.893-4.439 9.895-9.895.001-2.644-1.03-5.129-2.901-7.001-1.872-1.871-4.358-2.903-7.002-2.904-5.454 0-9.894 4.44-9.896 9.896-.001 1.944.57 3.841 1.65 5.448l-.999 3.647 3.74-.98zm11.367-7.312c-.31-.156-1.834-.905-2.112-1.006-.279-.101-.481-.151-.683.151-.202.302-.782 1.006-.957 1.208-.175.202-.35.227-.659.071-.31-.156-1.307-.482-2.489-1.536-.919-.82-1.539-1.833-1.719-2.135-.18-.302-.019-.465.136-.62.14-.14.31-.362.465-.544.155-.181.206-.312.31-.52.103-.207.051-.389-.026-.541-.078-.152-.683-1.643-.935-2.251-.245-.594-.495-.513-.683-.522-.178-.008-.382-.011-.586-.011-.204 0-.537.077-.817.382-.28.306-1.07 1.047-1.07 2.553s1.096 2.962 1.25 3.164c.154.202 2.155 3.291 5.22 4.614.729.314 1.298.502 1.742.643.732.233 1.398.2 1.925.121.588-.088 1.834-.751 2.094-1.442.26-.69.26-1.284.183-1.408-.078-.124-.287-.197-.597-.353z"/></svg>
-            </a>
-        </div>
-    </div>
-</div>
+<!-- Smartsupp Live Chat script -->
+<script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = 'abd3200759c1dd3f5ab7d5e1f587ef17397bde84';
+window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  c.type='text/javascript';c.charset='utf-8';c.async=true;
+  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+</script>
+<noscript>Powered by <a href="https://www.smartsupp.com" target="_blank">Smartsupp</a></noscript>

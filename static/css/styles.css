@@ -1,39 +1,42 @@
 body {
     font-family: "Inter", sans-serif;
-    background-color: #050505 !important;
-    color: #e5e7eb !important;
+    background: #FFFFFF !important;
+    color: #0F172A !important;
+    min-height: 100vh;
 }
 .serif {
     font-family: "Playfair Display", serif;
 }
-.neon-text {
-    color: #00f2ff;
-    text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+.accent-text {
+    color: #7C3AED !important;
 }
-.neon-border {
-    border-color: #00f2ff;
-    box-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
+.accent-border {
+    border-color: #7C3AED !important;
+    box-shadow: 0 1px 3px rgba(124, 58, 237, 0.1);
 }
-.neon-bg {
-    background-color: #00f2ff;
+.accent-bg {
+    background: #7C3AED !important;
+}
+.accent-bg:hover {
+    background: #6D28D9 !important;
 }
 .glass {
-    background: rgba(255, 255, 255, 0.03);
+    background: #FFFFFF;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+    border-radius: 24px;
 }
 .hero-gradient {
-    background: linear-gradient(
-        to bottom,
-        rgba(5, 5, 5, 0.4),
-        #050505
-    );
+    background: #F8FAFC;
 }
 .glow-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(124, 58, 237, 0.08);
 }
 .glow-card {
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 24px;
 }
 .scrollbar-hide::-webkit-scrollbar {
     display: none;

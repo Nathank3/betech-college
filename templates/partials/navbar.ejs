@@ -1,45 +1,61 @@
 <header
-    class="fixed w-full z-50 px-6 py-4 flex justify-between items-center glass border-b border-white/5"
+    class="fixed w-full z-50 py-5 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm"
 >
-    <div class="flex items-center gap-3">
-        <img src="/static/img/betech-logo.png" alt="Betech Logo" class="h-10 w-auto">
-        <div class="text-2xl font-bold tracking-tighter neon-text serif">
-            BETECH
+    <div class="max-w-6xl mx-auto px-8 md:px-12 flex justify-between items-center">
+        <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+            <img src="/static/img/betech-logo.png" alt="Betech Logo" class="h-10 w-auto">
+            <div class="text-2xl font-bold tracking-tight text-[#7C3AED] serif">
+                BETECH
+            </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav
+            class="hidden md:flex space-x-8 text-sm font-medium items-center"
+        >
+            <a href="/courses" class="text-slate-600 hover:text-purple-600 transition-colors duration-200">Courses</a>
+            <a href="/about" class="text-slate-600 hover:text-purple-600 transition-colors duration-200">About</a>
+            
+            <!-- Search Icon -->
+            <button id="open-prospectus-btn" class="p-2 text-slate-400 hover:text-purple-600 transition-colors duration-200" title="Search Courses">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </button>
+
+            <a
+                href="/contact"
+                class="px-6 py-2.5 bg-[#7C3AED] text-white shadow-lg shadow-purple-200/50 hover:shadow-purple-300/50 hover:bg-[#6D28D9] transition-all duration-200 font-semibold rounded-full"
+            >Contact Us</a>
+        </nav>
+
+        <!-- Mobile Nav Actions -->
+        <div class="flex items-center gap-4 md:hidden">
+            <!-- Mobile Search Icon -->
+            <button id="open-prospectus-btn-mobile" class="p-2 text-slate-700 hover:text-purple-600 transition">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </button>
+            
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="text-slate-700 hover:text-purple-600 transition">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
         </div>
     </div>
-
-    <!-- Desktop Nav -->
-    <nav
-        class="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-semibold items-center"
-    >
-        <a href="#top" class="hover:text-neon-text transition-colors duration-300">Home</a>
-        <a href="#courses" class="hover:text-neon-text transition-colors duration-300">Courses</a>
-        <a href="#about" class="hover:text-neon-text transition-colors duration-300">About</a>
-        <a
-            href="https://wa.me/+254711514558?text=Hi, I would like to inquire about enrolling at Betech College."
-            target="_blank"
-            class="px-6 py-2 border-2 border-neon-text text-neon-text hover:bg-neon-text hover:text-black transition duration-300 font-bold"
-        >Apply Now</a>
-    </nav>
-
-    <!-- Mobile Menu Toggle -->
-    <button id="mobile-menu-btn" class="md:hidden text-white hover:text-neon-text transition">
-        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-    </button>
 </header>
 
 <!-- Mobile Navigation Overlay -->
-<div id="mobile-nav" class="fixed inset-0 z-[49] bg-black/95 backdrop-blur-xl translate-x-full transition-transform duration-500 flex flex-col items-center justify-center space-y-8 text-2xl font-bold serif">
-    <a href="#top" class="hover:text-neon-text transition" onclick="toggleMobileMenu()">Home</a>
-    <a href="#courses" class="hover:text-neon-text transition" onclick="toggleMobileMenu()">Courses</a>
-    <a href="#about" class="hover:text-neon-text transition" onclick="toggleMobileMenu()">About Us</a>
+<div id="mobile-nav" class="fixed inset-0 z-[49] bg-white translate-x-full transition-transform duration-500 flex flex-col items-center justify-center space-y-8 text-2xl font-bold serif">
+    <a href="/courses" class="text-slate-800 hover:text-purple-600 transition" onclick="toggleMobileMenu()">Courses</a>
+    <a href="/about" class="text-slate-800 hover:text-purple-600 transition" onclick="toggleMobileMenu()">About Us</a>
     <a
-        href="https://wa.me/+254711514558"
-        target="_blank"
-        class="px-10 py-4 border-2 border-neon-text text-neon-text font-bold text-lg"
-    >Apply Now</a>
+        href="/contact"
+        class="px-10 py-4 bg-[#7C3AED] text-white font-bold text-lg rounded-full shadow-lg shadow-purple-200/50"
+    >Contact Us</a>
 </div>
 
 <script>

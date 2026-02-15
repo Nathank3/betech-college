@@ -1,19 +1,19 @@
 <div id="prospectus-overlay" class="fixed inset-0 z-[60] hidden overflow-hidden">
     <!-- Backdrop -->
-    <div class="absolute inset-0 bg-black/80 backdrop-blur-xl transition-opacity duration-500 opacity-0" id="prospectus-backdrop"></div>
+    <div class="absolute inset-0 bg-slate-900/50 backdrop-blur-md transition-opacity duration-500 opacity-0" id="prospectus-backdrop"></div>
     
     <!-- Modal Container -->
     <div class="relative h-full w-full flex items-center justify-center p-4 md:p-8">
         <div 
             id="prospectus-content"
-            class="w-full max-w-5xl h-[90vh] glass rounded-3xl border border-neon-text/30 shadow-[0_0_50px_rgba(0,242,255,0.1)] flex flex-col overflow-hidden translate-y-8 transition-transform duration-500 opacity-0 bg-black/40"
+            class="w-full max-w-5xl h-[90vh] bg-white rounded-3xl border border-slate-200 shadow-2xl flex flex-col overflow-hidden translate-y-8 transition-transform duration-500 opacity-0"
         >
             <!-- Header with Search -->
-            <div class="p-6 md:p-10 border-b border-white/5 flex flex-col md:flex-row gap-6 items-center justify-between bg-black/20">
+            <div class="p-6 md:p-10 border-b border-slate-100 flex flex-col md:flex-row gap-6 items-center justify-between bg-white/50">
                 <div class="flex-1 w-full">
                     <div class="relative group">
                         <div class="absolute inset-y-0 left-5 flex items-center pointer-events-none">
-                            <svg class="w-5 h-5 text-neon-text group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-5 h-5 text-purple-600 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                             </svg>
                         </div>
@@ -21,10 +21,10 @@
                             type="text" 
                             id="prospectus-search"
                             placeholder="Search for courses (e.g. AI, Design, Web...)"
-                            class="w-full bg-white/5 border border-white/10 text-white rounded-2xl py-4 pl-14 pr-20 focus:outline-none focus:border-neon-text/50 focus:ring-1 focus:ring-neon-text/50 transition-all font-medium placeholder:text-gray-600"
+                            class="w-full bg-slate-50 border border-slate-200 text-slate-900 rounded-2xl py-4 pl-14 pr-20 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 transition-all font-medium placeholder:text-slate-400"
                         >
                         <div class="absolute inset-y-0 right-5 flex items-center pointer-events-none">
-                            <span class="text-[10px] font-bold text-gray-500 border border-white/10 px-2 py-1 rounded-md bg-black/40 uppercase tracking-widest hidden md:block">
+                            <span class="text-[10px] font-bold text-slate-400 border border-slate-200 px-2 py-1 rounded-md bg-white uppercase tracking-widest hidden md:block">
                                 ESC to close
                             </span>
                         </div>
@@ -47,30 +47,30 @@
                     <% Object.keys(categories).forEach(categoryName => { %>
                         <div class="category-block mb-12">
                             <div class="flex items-center gap-4 mb-8">
-                                <h3 class="text-xl serif font-bold text-white"><%= categoryName %></h3>
-                                <div class="h-[1px] flex-1 bg-gradient-to-r from-neon-text/30 to-transparent"></div>
-                                <span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">
+                                <h3 class="text-xl serif font-bold text-slate-900"><%= categoryName %></h3>
+                                <div class="h-[1px] flex-1 bg-slate-200"></div>
+                                <span class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">
                                     <%= categories[categoryName].length %> Courses
                                 </span>
                             </div>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <% categories[categoryName].forEach(course => { %>
                                     <div 
-                                        class="glass p-5 rounded-2xl border border-white/5 hover:border-neon-text/30 transition-all group cursor-pointer"
+                                        class="bg-slate-50 p-5 rounded-2xl border border-slate-100 hover:border-purple-200 hover:bg-white hover:shadow-md transition-all group cursor-pointer"
                                         onclick="openCourseDetails('<%= course.title %>')"
                                     >
                                         <div class="flex gap-4">
-                                            <div class="w-20 h-20 rounded-xl overflow-hidden shrink-0 border border-white/5 <%= course.image.endsWith('.png') ? 'bg-white/10' : '' %>">
-                                                <img src="<%= course.image %>" alt="<%= course.title %>" class="w-full h-full <%= course.image.endsWith('.png') ? 'object-contain p-2' : 'object-cover' %> group-hover:scale-110 transition-transform duration-500">
+                                            <div class="w-20 h-20 rounded-xl overflow-hidden shrink-0 border border-slate-200/50">
+                                                <img src="<%= course.image %>" alt="<%= course.title %>" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                                             </div>
                                             <div class="flex-1 min-w-0">
                                                 <div class="flex justify-between items-start mb-1">
-                                                    <h4 class="font-bold text-white group-hover:text-neon-text transition-colors truncate"><%= course.title %></h4>
-                                                    <span class="text-[8px] bg-neon-text/10 text-neon-text px-2 py-0.5 rounded-full border border-neon-text/20 uppercase font-black tracking-tighter">
+                                                    <h4 class="font-bold text-slate-900 group-hover:text-purple-600 transition-colors truncate"><%= course.title %></h4>
+                                                    <span class="text-[8px] bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full border border-purple-200 uppercase font-bold tracking-widest">
                                                         <%= course.tag %>
                                                     </span>
                                                 </div>
-                                                <p class="text-xs text-gray-500 line-clamp-2 leading-relaxed">
+                                                <p class="text-xs text-slate-500 line-clamp-2 leading-relaxed">
                                                     <%= course.description %>
                                                 </p>
                                             </div>
@@ -100,16 +100,16 @@
             </div>
 
             <!-- Footer -->
-            <div class="p-6 md:p-8 border-t border-white/5 bg-black/40 flex flex-col md:flex-row gap-4 items-center justify-between">
-                <div class="text-xs text-gray-500">
-                    <span class="text-neon-text font-bold">BETECH</span> Full Course Catalog
+            <div class="p-6 md:p-8 border-t border-slate-100 bg-slate-50/50 flex flex-col md:flex-row gap-4 items-center justify-between">
+                <div class="text-xs text-slate-500">
+                    <span class="text-purple-600 font-bold">BETECH</span> Full Course Catalog
                 </div>
                 <div class="flex items-center gap-4">
-                    <p class="text-xs text-gray-400 hidden sm:block">Can't find what you're looking for?</p>
+                    <p class="text-xs text-slate-400 hidden sm:block">Can't find what you're looking for?</p>
                     <a 
                         href="https://wa.me/+254711514558?text=Hi, I am looking for a course not listed in your main prospectus."
                         target="_blank"
-                        class="px-6 py-2 bg-neon-text/10 border border-neon-text/30 text-neon-text hover:bg-neon-text hover:text-black transition-all rounded-xl text-xs font-bold flex items-center gap-2"
+                        class="px-6 py-2 bg-purple-600 text-white hover:bg-purple-700 transition-all rounded-xl text-xs font-bold flex items-center gap-2"
                     >
                         Contact us 
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.224-3.52c1.54.914 3.482 1.488 5.613 1.489 5.454 0 9.893-4.439 9.895-9.895.001-2.644-1.03-5.129-2.901-7.001-1.872-1.871-4.358-2.903-7.002-2.904-5.454 0-9.894 4.44-9.896 9.896-.001 1.944.57 3.841 1.65 5.448l-.999 3.647 3.74-.98zm11.367-7.312c-.31-.156-1.834-.905-2.112-1.006-.279-.101-.481-.151-.683.151-.202.302-.782 1.006-.957 1.208-.175.202-.35.227-.659.071-.31-.156-1.307-.482-2.489-1.536-.919-.82-1.539-1.833-1.719-2.135-.18-.302-.019-.465.136-.62.14-.14.31-.362.465-.544.155-.181.206-.312.31-.52.103-.207.051-.389-.026-.541-.078-.152-.683-1.643-.935-2.251-.245-.594-.495-.513-.683-.522-.178-.008-.382-.011-.586-.011-.204 0-.537.077-.817.382-.28.306-1.07 1.047-1.07 2.553s1.096 2.962 1.25 3.164c.154.202 2.155 3.291 5.22 4.614.729.314 1.298.502 1.742.643.732.233 1.398.2 1.925.121.588-.088 1.834-.751 2.094-1.442.26-.69.26-1.284.183-1.408-.078-.124-.287-.197-.597-.353z"/></svg>

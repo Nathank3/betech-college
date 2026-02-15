@@ -30,9 +30,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    if (openBtn) openBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        toggleOverlay(true);
+    const openButtons = [
+        document.getElementById('open-prospectus-btn'),
+        document.getElementById('open-prospectus-btn-mobile')
+    ];
+    
+    openButtons.forEach(btn => {
+        if (btn) btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            toggleOverlay(true);
+        });
     });
     if (closeBtn) closeBtn.addEventListener('click', () => toggleOverlay(false));
 

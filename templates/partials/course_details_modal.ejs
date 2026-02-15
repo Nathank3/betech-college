@@ -1,55 +1,55 @@
 <div id="course-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
     <!-- Backdrop -->
-    <div class="absolute inset-0 bg-black/90 backdrop-blur-sm" onclick="closeCourseModal()"></div>
+    <div class="absolute inset-0 bg-black/40 backdrop-blur-sm" onclick="closeCourseModal()"></div>
     
     <!-- Modal Content -->
-    <div class="glass relative max-w-2xl w-full bg-black/80 border border-neon-text/30 p-8 md:p-12 overflow-y-auto max-h-[90vh]">
-        <button onclick="closeCourseModal()" class="absolute top-6 right-6 text-gray-400 hover:text-neon-text transition-colors">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <div class="bg-white relative max-w-2xl w-full border border-slate-200 p-8 md:p-12 overflow-y-auto max-h-[90vh] rounded-3xl shadow-2xl">
+        <button onclick="closeCourseModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-700 transition-colors">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
         </button>
 
         <div id="modal-content">
             <div class="flex items-center gap-3 mb-6">
-                <div class="px-3 py-1 bg-neon-text/10 text-neon-text text-[10px] font-black uppercase tracking-widest border border-neon-text/30 rounded-full">
+                <div class="px-4 py-2 bg-purple-50 text-purple-700 text-xs font-semibold uppercase tracking-wider border border-purple-100 rounded-full">
                     <span id="modal-tag">Loading...</span>
                 </div>
             </div>
             
-            <h3 id="modal-title" class="text-3xl md:text-4xl serif font-bold mb-6 neon-text">Course Title</h3>
+            <h3 id="modal-title" class="text-3xl md:text-4xl serif font-bold mb-6 text-slate-900">Course Title</h3>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
                 <div>
-                    <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">About this Course</h4>
-                    <p id="modal-description" class="text-gray-400 leading-relaxed">
+                    <h4 class="text-slate-900 font-bold mb-4 text-sm">About this Course</h4>
+                    <p id="modal-description" class="text-slate-600 leading-relaxed text-sm">
                         This is a placeholder description for the selected course. It provides an overview of what students will learn and the career opportunities available.
                     </p>
                 </div>
                 <div>
-                    <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">What You'll Learn</h4>
-                    <ul id="modal-learn-list" class="space-y-2 text-sm text-gray-500">
+                    <h4 class="text-slate-900 font-bold mb-4 text-sm">What You'll Learn</h4>
+                    <ul id="modal-learn-list" class="space-y-2 text-sm text-slate-700">
                         <!-- Dynamic items -->
                     </ul>
                 </div>
             </div>
 
-            <div class="grid grid-cols-3 gap-4 mb-10 border-t border-white/5 pt-8">
+            <div class="grid grid-cols-3 gap-4 mb-10 border-t border-slate-200 pt-8">
                 <div>
-                    <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Duration</p>
-                    <p id="modal-duration" class="text-white font-bold">Loading...</p>
+                    <p class="text-xs text-slate-500 mb-1">Duration</p>
+                    <p id="modal-duration" class="text-slate-900 font-semibold">Loading...</p>
                 </div>
                 <div>
-                    <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Level</p>
-                    <p id="modal-level" class="text-white font-bold">Loading...</p>
+                    <p class="text-xs text-slate-500 mb-1">Level</p>
+                    <p id="modal-level" class="text-slate-900 font-semibold">Loading...</p>
                 </div>
                 <div>
-                    <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Sessions</p>
-                    <p id="modal-sessions" class="text-white font-bold">Flexible</p>
+                    <p class="text-xs text-slate-500 mb-1">Sessions</p>
+                    <p id="modal-sessions" class="text-slate-900 font-semibold">Flexible</p>
                 </div>
             </div>
 
-            <a href="https://wa.me/+254711514558" target="_blank" class="w-full inline-block text-center py-4 bg-neon-text text-black font-black uppercase tracking-widest hover:bg-white transition-colors duration-300">
+            <a href="https://wa.me/+254711514558" target="_blank" class="w-full inline-block text-center py-4 accent-bg text-white font-semibold hover:shadow-lg transition-all duration-300 rounded-full">
                 Enroll Now 
             </a>
         </div>
@@ -90,7 +90,7 @@
             items.forEach(item => {
                 const li = document.createElement('li');
                 li.className = 'flex items-center gap-2';
-                li.innerHTML = `<span class="text-neon-text">✓</span> ${item}`;
+                li.innerHTML = `<span class="text-purple-600">✓</span> ${item}`;
                 learnList.appendChild(li);
             });
         }

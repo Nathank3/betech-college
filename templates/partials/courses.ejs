@@ -1,49 +1,81 @@
-<section id="courses" class="py-24 px-6 max-w-7xl mx-auto">
-    <div class="mb-20 text-center reveal reveal-up">
-        <h2 class="text-4xl md:text-5xl serif font-bold mb-4">World-Class <span class="neon-text">Curriculum</span></h2>
-        <p class="text-gray-500 uppercase tracking-[0.3em] text-sm font-semibold">
-            Empowering the next generation of tech leaders
+<section id="courses" class="pt-12 pb-10 bg-white">
+    <div class="max-w-6xl mx-auto px-8 md:px-12">
+    <div class="mb-16 text-center reveal reveal-up">
+        <span class="inline-block px-4 py-2 bg-purple-50 text-purple-700 text-xs font-semibold uppercase tracking-wider rounded-full border border-purple-100 mb-4">
+            Our Programs
+        </span>
+        <h2 class="text-4xl md:text-5xl serif font-bold mb-4 text-slate-900">World-Class <span class="accent-text">Curriculum</span></h2>
+        <p class="text-slate-500 text-lg max-w-2xl mx-auto">
+            Empowering the next generation of tech leaders with industry-relevant skills
         </p>
     </div>
 
     <% Object.keys(categories).forEach(categoryName => { %>
-        <div class="mb-20 reveal reveal-up">
-            <div class="flex items-center gap-4 mb-10">
-                <h3 class="text-2xl serif font-bold whitespace-nowrap"><%= categoryName %></h3>
-                <div class="h-[1px] w-full bg-gradient-to-r from-neon-text/50 to-transparent"></div>
+        <div class="mb-24 reveal reveal-up">
+            <div class="flex items-center gap-4 mb-12">
+                <h3 class="text-2xl serif font-bold whitespace-nowrap text-slate-800"><%= categoryName %></h3>
+                <div class="h-px w-full bg-gradient-to-r from-slate-200 to-transparent"></div>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <% categories[categoryName].slice(0, 3).forEach((course, index) => { %>
-                    <div class="glow-card group relative">
-                        <div class="absolute -inset-0.5 bg-neon-text opacity-0 group-hover:opacity-20 blur transition-all duration-500 rounded-2xl"></div>
-                        <div class="glass overflow-hidden flex flex-col h-full rounded-2xl border border-white/5 group-hover:border-neon-text/50 transition-all duration-500 relative bg-black/40">
-                            <div class="relative h-56 overflow-hidden <%= course.image.endsWith('.png') ? 'bg-white/10' : '' %>">
-                                <img
-                                    src="<%= course.image %>"
-                                    alt="<%= course.title %>"
-                                    class="w-full h-full <%= course.image.endsWith('.png') ? 'object-contain p-4' : 'object-cover' %> group-hover:scale-110 transition duration-700"
-                                >
-                                <div class="absolute top-4 right-4 px-3 py-1 bg-black/80 text-neon-text text-[10px] font-black uppercase tracking-widest border border-neon-text/30 backdrop-blur-md rounded-full">
-                                    <%= course.tag %>
-                                </div>
+                    <div class="glow-card group relative bg-white border border-slate-100 overflow-hidden flex flex-col rounded-3xl shadow-sm hover:shadow-xl transition-all duration-500">
+                        <!-- Image Container -->
+                        <div class="relative h-56 overflow-hidden">
+                            <img 
+                                src="<%= course.image %>" 
+                                alt="<%= course.title %>" 
+                                class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                            >
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                            <div class="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-md text-purple-700 text-[10px] font-bold uppercase tracking-wider rounded-full shadow-sm">
+                                <%= course.tag %>
                             </div>
-                            <div class="p-8 flex-grow flex flex-col">
-                                <h4 class="text-xl serif font-bold mb-3 group-hover:text-neon-text transition-colors">
-                                    <%= course.title %>
-                                </h4>
-                                <p class="text-gray-500 text-sm mb-6 leading-relaxed line-clamp-3">
-                                    <%= course.description %>
-                                </p>
-                                <div class="mt-auto pt-6 border-t border-white/5 flex justify-between items-center">
-                                    <button 
-                                        onclick="openCourseDetails('<%= course.title %>')"
-                                        class="text-xs font-bold uppercase tracking-widest text-gray-400 group-hover:text-neon-text transition-colors inline-flex items-center gap-2"
-                                    >
-                                        View Details
-                                        <span class="translate-x-0 group-hover:translate-x-1 transition-transform">→</span>
-                                    </button>
-                                </div>
+                            <div class="absolute bottom-4 left-4 flex gap-2">
+                                <span class="bg-white/20 backdrop-blur-md text-white text-[10px] px-2.5 py-1 rounded-lg border border-white/20">
+                                    <%= course.duration %>
+                                </span>
+                                <span class="bg-white/20 backdrop-blur-md text-white text-[10px] px-2.5 py-1 rounded-lg border border-white/20">
+                                    <%= course.level %>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="p-8 flex-grow flex flex-col">
+                            <h4 class="text-2xl serif font-bold mb-3 text-slate-900 group-hover:text-purple-600 transition-colors leading-tight">
+                                <%= course.title %>
+                            </h4>
+                            <p class="text-slate-500 text-sm mb-6 leading-relaxed line-clamp-2">
+                                <%= course.description %>
+                            </p>
+
+                            <!-- What You'll Learn Preview -->
+                            <div class="mb-8">
+                                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">Core Modules</p>
+                                <ul class="space-y-2">
+                                    <% (course.learn || []).slice(0, 3).forEach(item => { %>
+                                        <li class="flex items-center gap-2 text-sm text-slate-600">
+                                            <div class="w-1.5 h-1.5 rounded-full bg-purple-400"></div>
+                                            <%= item %>
+                                        </li>
+                                    <% }); %>
+                                </ul>
+                            </div>
+
+                            <div class="mt-auto pt-6 border-t border-slate-50 flex justify-between items-center">
+                                <a 
+                                    href="/courses#<%= course.title.toLowerCase().replace(/[^a-z0-9]+/g, '-') %>"
+                                    class="text-sm font-bold text-purple-600 hover:text-purple-700 transition-colors inline-flex items-center gap-2"
+                                >
+                                    Full Details
+                                    <span class="translate-x-0 group-hover:translate-x-1 transition-transform">→</span>
+                                </a>
+                                <a 
+                                    href="/contact?course=<%= encodeURIComponent(course.title) %>"
+                                    class="text-[10px] font-bold text-slate-400 hover:text-purple-600 uppercase tracking-tighter"
+                                >
+                                    Quick Enroll
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -53,12 +85,13 @@
     <% }); %>
 
     <!-- View All Courses Button -->
-    <div class="mt-8 text-center">
-        <button
-            id="open-prospectus-btn"
-            class="inline-block px-10 py-4 border-2 border-neon-text text-neon-text font-bold text-lg hover:bg-neon-text hover:text-black transition duration-500 shadow-[0_0_20px_rgba(0,242,255,0.1)] hover:shadow-[0_0_30px_rgba(0,242,255,0.3)]"
+    <div class="mt-12 text-center">
+        <a
+            href="/courses"
+            class="inline-block px-10 py-4 bg-[#7C3AED] text-white font-semibold text-base shadow-lg shadow-purple-200/50 hover:shadow-purple-300/50 hover:bg-[#6D28D9] transition-all duration-300 rounded-full"
         >
             Explore Full Prospectus
-        </button>
+        </a>
+    </div>
     </div>
 </section>
