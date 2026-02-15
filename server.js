@@ -18,10 +18,11 @@ app.disable('x-powered-by');
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'templates'));
 
-// Serve static files with caching (1 day)
+// Serve static files with robust caching (30 days for assets)
 const cacheOptions = {
-    maxAge: '1d',
-    etag: true
+    maxAge: '30d',
+    etag: true,
+    lastModified: true
 };
 app.use('/static', express.static(path.join(__dirname, 'static'), cacheOptions));
 
